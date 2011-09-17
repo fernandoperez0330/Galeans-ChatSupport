@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title><?=$title?></title>
+        <?php
+        //para dar salida de los tags de los javascripts pro defecto
+        include(Config::$directories['views'] . "jscripts.html");
+        //para dar salida de los tags de los css por defecto
+        include(Config::$directories['views'] . "css.html");
+        ?>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="header">
+                <?=$header?>
+            </div>
+            <div class="content">
+                <?=$content?>
+            </div>
+        </div>
+    </body>
+</html>
