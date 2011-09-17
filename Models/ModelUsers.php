@@ -10,8 +10,13 @@
  *
  * @author Fernando
  */
+include ("EntitieManager.php");
 class ModelUsers {
-    //put your code here
+	protected function create($value){}
+	protected function modify($value){}
+	protected function find($value){}
+	protected function listAll($value){}
+	protected function delete($value){}
 }
 
 ?>

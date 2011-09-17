@@ -10,8 +10,13 @@
  *
  * @author Fernando
  */
-class ModelClients {
-    //put your code here
-}
+include ("EntitieManager.php");
+class ModelClients extends EntitieManager {
+		protected function create($value){}
+		protected function modify($value){}
+		protected function find($value){}
+		protected function listAll($value){}
+		protected function delete($value){}
+}	
 
 ?>
