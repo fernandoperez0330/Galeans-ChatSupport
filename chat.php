@@ -13,5 +13,13 @@ $title = Config::$title . " - Chat";
 $header = file_get_contents(Config::$directories['views'] . "header.html");
 //esta sera la variable que guardará los contenidos dinamicos (que cambian) (pueden agregarse mas variable en el cual utilizara la vista)
 $content = "";
+
+//
+$session = 1;
+//
+$operator = 1;
+//session_id's clients
+$client = 1;
+
 include(Config::$directories['views'] . "chat.html");
 ?>

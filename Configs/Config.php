@@ -17,12 +17,12 @@ class Config {
     static $directories = array(
                             "js"=>"js/",
                             "css"=>"css/",
-                            "views"=>"Views/"
+                            "views"=>"views/"
                           );
     
-    static $jsDir = "Js/";
     static $jquery = "jq.js";
     static $jsmain = "main.js";
+    static $jsutils = "utils.js";
     
     static $cssmain  = "main.css";
     
