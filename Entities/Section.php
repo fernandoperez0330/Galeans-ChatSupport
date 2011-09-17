@@ -11,40 +11,40 @@
  * @author Fernando
  */
 class Section {
-  	private $sectionId;
-	private $date;
-	private $conversation;
-	private $user;
-	private $userSection;
+  	var $sectionId;
+	var $date;
+	var $conversation;
+	var $user;
+	var $userSection;
 	
-	public Section($date, $conversation, $user, $userSection){
+	function __construct($date, $conversation, $user, $userSection){
 		$this->date = $date;
 		$this->conversation = $conversation;
 		$this->user = $user;
 		$this->userSection = $userSection;
 	}
 	
-	public function setDate($date){
+	function setDate($date){
 		$this->date = $date;
 	}
-	public function getDate(){
+	function getDate(){
 		return $this->date;
 	}
-	public function setConversation($conversation){
+	function setConversation($conversation){
 		$this->conversation = $conversation;
 	}
-	public function getConversation(){
+	function getConversation(){
 		return $this->conversation;
 	}
-	public function setUser($user){
+	function setUser($user){
 		$this->user = $user;
 	}
 	
-	public function getUser(){
+	function getUser(){
 		return $this->user;
 	}
 	
-	public function setUserSection($userSection){
+	function setUserSection($userSection){
 		$this->userSection = $userSection;
 	}
 	

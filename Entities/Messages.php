@@ -10,6 +10,7 @@
  *
  * @author Fernando
  */
+ echo "Para Borrar";
 class Messages {
     //put your code here
 }

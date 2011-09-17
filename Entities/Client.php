@@ -10,8 +10,9 @@
  *
  * @author Fernando
  */
-class Clients {
-    //put your code here
+ echo "Para Borrar";
+class Client {
+
 }
 
 ?>

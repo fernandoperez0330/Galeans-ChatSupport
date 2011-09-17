@@ -1,46 +1,46 @@
 <?php
-	public class UserSection{
+	class UserSection{
 	
-	private $userSectionId;
-	private $name;
-	private $email;
-	private $company;
+	var $userSectionId;
+	var $name;
+	var $email;
+	var $company;
 
-	public UserSection($userSectionId, $name, $email, $company) {
+	function __construct($userSectionId, $name, $email, $company) {
 		$this->userSectionId = $userSectionId;
 		$this->name = $name;
 		$this->email = $email;
 		$this->company = $company;		
 	}
 	
-	public function setUserSectionId($userSectionId){
+	function setUserSectionId($userSectionId){
 		$this->userSection = $userSectionId;
 	}
 	
-	public function getUserSectionId(){
+	function getUserSectionId(){
 		return $this->userSectionId;
 	}
 	
-	public function setName($name){
+	function setName($name){
 		$this->name = $name;
 	}
 	
-	public function getName(){
+	function getName(){
 		return $this->name;
 	}
 	
-	public function setEmail($email){
+	function setEmail($email){
 		$this->email = $name;
 	}
 	
-	public function getEmail(){
+	function getEmail(){
 		return $this->email;
 	}
 	
-	public function setCompany($company){
+	function setCompany($company){
 		$this->company =$company;
 	}
-	public function getCompany(){
+	function getCompany(){
 		$this->company;
 	}
 

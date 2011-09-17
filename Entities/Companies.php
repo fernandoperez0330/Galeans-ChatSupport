@@ -10,6 +10,7 @@
  *
  * @author Fernando
  */
+ echo "Para Borrar";
 class Companies {
     //put your code here
 }
