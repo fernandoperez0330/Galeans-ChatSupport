@@ -6,115 +6,115 @@ CREATE SCHEMA IF NOT EXISTS `galean` DEFAULT CHARACTER SET latin1 COLLATE latin1
 USE `galean`;
 
 -- -----------------------------------------------------
--- Table `galean`.`Empresa`
+-- Table `galean`.`Companies`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `galean`.`Empresa` (
-  `idEmpresa` INT NOT NULL AUTO_INCREMENT ,
-  `nombre` VARCHAR(80) NULL ,
-  `correo` VARCHAR(80) NULL ,
-  `dirrecion` VARCHAR(150) NULL ,
-  `telefono` VARCHAR(13) NULL ,
-  `descripcion` VARCHAR(150) NULL ,
-  `fechaRegistro` DATETIME NULL ,
-  PRIMARY KEY (`idEmpresa`) )
+CREATE  TABLE IF NOT EXISTS `galean`.`Companies` (
+  `companyId` INT NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(80) NULL ,
+  `email` VARCHAR(80) NULL ,
+  `address` VARCHAR(150) NULL ,
+  `telephone` VARCHAR(13) NULL ,
+  `description` VARCHAR(150) NULL ,
+  `registeredDate` DATETIME NULL ,
+  PRIMARY KEY (`companyId`) )
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `galean`.`Usuario`
+-- Table `galean`.`Users`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `galean`.`Usuario` (
-  `idUsuario` INT NOT NULL AUTO_INCREMENT ,
-  `nombreCompleto` VARCHAR(45) NULL ,
-  `clave` VARCHAR(100) NULL ,
-  `correo` VARCHAR(80) NULL ,
-  `fechaRegistro` DATETIME NULL ,
-  `estatus` BOOLEAN NULL ,
-  `Empresa_idEmpresa` INT NULL ,
-  PRIMARY KEY (`idUsuario`) ,
-  INDEX `fk_Usuario_Empresa` (`Empresa_idEmpresa` ASC) ,
+CREATE  TABLE IF NOT EXISTS `galean`.`Users` (
+  `userId` INT NOT NULL AUTO_INCREMENT ,
+  `fullName` VARCHAR(45) NULL ,
+  `password` VARCHAR(100) NULL ,
+  `email` VARCHAR(80) NULL ,
+  `registeredDate` DATETIME NULL ,
+  `status` BOOLEAN NULL ,
+  `companyId` INT NULL ,
+  PRIMARY KEY (`userId`) ,
+  INDEX `fk_Usuario_Empresa` (`companyId` ASC) ,
   CONSTRAINT `fk_Usuario_Empresa`
-    FOREIGN KEY (`Empresa_idEmpresa` )
-    REFERENCES `galean`.`Empresa` (`idEmpresa` )
+    FOREIGN KEY (`companyId` )
+    REFERENCES `galean`.`Companies` (`companyId` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `galean`.`UsarioSeccion`
+-- Table `galean`.`UserSections`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `galean`.`UsarioSeccion` (
-  `idUsuarioSeccion` INT NOT NULL AUTO_INCREMENT ,
-  `nombre` VARCHAR(45) NULL ,
-  `correo` VARCHAR(13) NULL ,
-  `empresa` VARCHAR(13) NULL ,
-  PRIMARY KEY (`idUsuarioSeccion`) )
+CREATE  TABLE IF NOT EXISTS `galean`.`UserSections` (
+  `userSectionId` INT NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(45) NULL ,
+  `email` VARCHAR(80) NULL ,
+  `company` VARCHAR(90) NULL ,
+  PRIMARY KEY (`userSectionId`) )
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `galean`.`Mensaje`
+-- Table `galean`.`Messages`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `galean`.`Mensaje` (
-  `idMensaje` INT NOT NULL AUTO_INCREMENT ,
-  `emisor` VARCHAR(80) NULL ,
-  `destinatario` VARCHAR(80) NULL ,
-  `asunto` VARCHAR(80) NULL ,
-  `cuerpo` VARCHAR(200) NULL ,
-  `fecha` DATETIME NULL ,
-  `estatus` BOOLEAN NULL ,
-  `Clientes_idClientes` INT NULL ,
-  PRIMARY KEY (`idMensaje`) ,
-  INDEX `fk_Mensaje_Clientes` (`Clientes_idClientes` ASC) ,
+CREATE  TABLE IF NOT EXISTS `galean`.`Messages` (
+  `messageId` INT NOT NULL AUTO_INCREMENT ,
+  `transmitter` VARCHAR(80) NULL ,
+  `receiver` VARCHAR(80) NULL ,
+  `subject` VARCHAR(80) NULL ,
+  `body` VARCHAR(200) NULL ,
+  `date` DATETIME NULL ,
+  `status` BOOLEAN NULL ,
+  `userSectionId` INT NULL ,
+  PRIMARY KEY (`messageId`) ,
+  INDEX `fk_Mensaje_Clientes` (`userSectionId` ASC) ,
   CONSTRAINT `fk_Mensaje_Clientes`
-    FOREIGN KEY (`Clientes_idClientes` )
-    REFERENCES `galean`.`UsarioSeccion` (`idUsuarioSeccion` )
+    FOREIGN KEY (`userSectionId` )
+    REFERENCES `galean`.`UserSections` (`userSectionId` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `galean`.`Seccion`
+-- Table `galean`.`Sections`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `galean`.`Seccion` (
-  `idSeccion` INT NOT NULL ,
-  `fecha` DATETIME NULL ,
-  `conversacion` BLOB NULL ,
-  `Usuario_idUsuario` INT NULL ,
-  `UsarioSecciones_idClientes` INT NULL ,
-  PRIMARY KEY (`idSeccion`) ,
-  INDEX `fk_Secciones_Usuario` (`Usuario_idUsuario` ASC) ,
-  INDEX `fk_Secciones_UsarioSecciones` (`UsarioSecciones_idClientes` ASC) ,
+CREATE  TABLE IF NOT EXISTS `galean`.`Sections` (
+  `sectionId` INT NOT NULL ,
+  `date` DATETIME NULL ,
+  `conversation` BLOB NULL ,
+  `userId` INT NULL ,
+  `userSectionId` INT NULL ,
+  PRIMARY KEY (`sectionId`) ,
+  INDEX `fk_Secciones_Usuario` (`userId` ASC) ,
+  INDEX `fk_Secciones_UsarioSecciones` (`userSectionId` ASC) ,
   CONSTRAINT `fk_Secciones_Usuario`
-    FOREIGN KEY (`Usuario_idUsuario` )
-    REFERENCES `galean`.`Usuario` (`idUsuario` )
+    FOREIGN KEY (`userId` )
+    REFERENCES `galean`.`Users` (`userId` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Secciones_UsarioSecciones`
-    FOREIGN KEY (`UsarioSecciones_idClientes` )
-    REFERENCES `galean`.`UsarioSeccion` (`idUsuarioSeccion` )
+    FOREIGN KEY (`userSectionId` )
+    REFERENCES `galean`.`UserSections` (`userSectionId` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `galean`.`Caso`
+-- Table `galean`.`Cases`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `galean`.`Caso` (
-  `idCaso` INT NOT NULL AUTO_INCREMENT ,
-  `descripcion` VARCHAR(250) NULL ,
-  `notas` VARCHAR(250) NULL ,
-  `estado` VARCHAR(40) NULL ,
-  `solucion` VARCHAR(250) NULL ,
-  `Secciones_idSecciones` INT NULL ,
-  PRIMARY KEY (`idCaso`) ,
-  INDEX `fk_Caso_Secciones` (`Secciones_idSecciones` ASC) ,
+CREATE  TABLE IF NOT EXISTS `galean`.`Cases` (
+  `caseId` INT NOT NULL AUTO_INCREMENT ,
+  `description` VARCHAR(250) NULL ,
+  `notes` VARCHAR(250) NULL ,
+  `status` VARCHAR(40) NULL ,
+  `solution` VARCHAR(250) NULL ,
+  `sectionId` INT NULL ,
+  PRIMARY KEY (`caseId`) ,
+  INDEX `fk_Caso_Secciones` (`sectionId` ASC) ,
   CONSTRAINT `fk_Caso_Secciones`
-    FOREIGN KEY (`Secciones_idSecciones` )
-    REFERENCES `galean`.`Seccion` (`idSeccion` )
+    FOREIGN KEY (`sectionId` )
+    REFERENCES `galean`.`Sections` (`sectionId` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -122,10 +122,10 @@ ENGINE = InnoDB;
 USE `galean`;
 
 -- -----------------------------------------------------
--- Data for table `galean`.`UsarioSeccion`
+-- Data for table `galean`.`UserSections`
 -- -----------------------------------------------------
 SET AUTOCOMMIT=0;
-INSERT INTO `UsarioSeccion` (`idUsuarioSeccion`, `nombre`, `correo`, `empresa`) VALUES (1, 'Generico', '', '');
+INSERT INTO `UserSections` (`userSectionId`, `name`, `email`, `company`) VALUES (1, 'Generico', '', '');
 
 COMMIT;
 
