@@ -11,7 +11,7 @@
  * @author Fernando
  */
 include ("EntitieManager.php");
-class ModelUsers {
+class ModelUser {
 	protected function create($value){}
 	protected function modify($value){}
 	protected function find($value){}

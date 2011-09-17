@@ -11,7 +11,7 @@
  * @author Fernando
  */
 include ("EntitieManager.php");
-class ModelClients extends EntitieManager {
+class ModelClient extends EntitieManager {
 		protected function create($value){}
 		protected function modify($value){}
 		protected function find($value){}

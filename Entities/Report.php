@@ -1,6 +1,6 @@
 <?php
-	class Cases{
-		var $caseId;
+	class Report{
+		var $reportId;
 		var $description;
 		var $notes;
 		var $solution;
@@ -13,11 +13,11 @@
 			$this->section = $section;
 		}
 		
-		function setCaseId($caseId){
-			$this->caseId = $caseId;
+		function setreportId($reportId){
+			$this->reportId = $reportId;
 		}
-		function getCaseId(){
-			return $this->caseId;
+		function getreportId(){
+			return $this->reportId;
 		}
 		
 		function setNotes($notes){

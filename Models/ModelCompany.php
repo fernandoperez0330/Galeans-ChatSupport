@@ -11,7 +11,7 @@
  * @author Fernando
  */
 include ("EntitieManager.php");
-class ModelCompanies {
+class ModelCompany {
     	protected function create($value){}
 		protected function modify($value){}
 		protected function find($value){}

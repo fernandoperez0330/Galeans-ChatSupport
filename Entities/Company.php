@@ -10,7 +10,7 @@
  *
  * @author Fernando
  */
-class Companie {
+class Company {
     var $companyId;
 	var $name;
 	var $address;
