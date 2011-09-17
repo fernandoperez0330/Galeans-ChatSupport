@@ -11,7 +11,22 @@
  * @author Fernando
  */
 class Config {
-    //put your code here
+    
+    
+    
+    static $directories = array(
+                            "js"=>"js/",
+                            "css"=>"css/",
+                            "views"=>"Views/"
+                          );
+    
+    static $jsDir = "Js/";
+    static $jquery = "jq.js";
+    static $jsmain = "main.js";
+    
+    
+    static $title = "Galeans Chat Support";
+    static $header ="";
 }
 
 ?>

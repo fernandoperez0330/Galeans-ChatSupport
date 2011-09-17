@@ -1,14 +1,21 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
 <html>
     <head>
-        <title></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title><?=$title?></title>
+        <?php
+        //para dar salida de los tags de los javascripts pro defecto
+        include(Config::$directories['views'] . "jscripts.html");
+        //para dar salida de los tags de los css por defecto
+        include(Config::$directories['views'] . "css.html");
+        ?>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div id="wrap">
+            <div id="header">
+                <?=$header?>
+            </div>
+            <div class="content">
+                <?=$content?>
+            </div>
+        </div>
     </body>
 </html>
