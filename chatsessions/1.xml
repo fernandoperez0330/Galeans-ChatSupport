@@ -1,100 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <chat>
 <message id="1">
-<date>2011-09-17 04:34:15</date>
+<date>2011-09-17 05:52:54</date>
 <senderId>1</senderId>
 <sender>Operador 1</sender>
 <content>fernando</content>
 </message>
 
 <message id="2">
-<date>2011-09-17 04:38:10</date>
+<date>2011-09-17 05:52:59</date>
 <senderId>1</senderId>
 <sender>Operador 1</sender>
-<content>hola</content>
+<content>hey papa</content>
 </message>
 
 <message id="3">
-<date>2011-09-17 04:38:17</date>
+<date>2011-09-17 05:53:00</date>
 <senderId>1</senderId>
 <sender>Operador 1</sender>
-<content>adpsdnada</content>
+<content>klk</content>
 </message>
 
 <message id="4">
-<date>2011-09-17 04:39:03</date>
+<date>2011-09-17 05:53:02</date>
 <senderId>1</senderId>
 <sender>Operador 1</sender>
-<content>hola</content>
+<content>como tu ta?</content>
 </message>
 
 <message id="5">
-<date>2011-09-17 04:39:36</date>
-<senderId>1</senderId>
-<sender>Operador 1</sender>
-<content>que tal</content>
-</message>
-
-<message id="6">
-<date>2011-09-17 04:39:39</date>
-<senderId>1</senderId>
-<sender>Operador 1</sender>
-<content>ya</content>
-</message>
-
-<message id="7">
-<date>2011-09-17 04:40:45</date>
-<senderId>1</senderId>
-<sender>Operador 1</sender>
-<content>dfsdfsdf</content>
-</message>
-
-<message id="8">
-<date>2011-09-17 04:40:46</date>
-<senderId>1</senderId>
-<sender>Operador 1</sender>
-<content>dfdfdfasd</content>
-</message>
-
-<message id="9">
-<date>2011-09-17 04:41:14</date>
-<senderId>1</senderId>
-<sender>Operador 1</sender>
-<content>sdfsafsfsdf</content>
-</message>
-
-<message id="10">
-<date>2011-09-17 04:49:19</date>
+<date>2011-09-17 06:07:01</date>
 <senderId>1</senderId>
 <sender>Operador 1</sender>
 <content>hey</content>
 </message>
 
-<message id="11">
-<date>2011-09-17 04:52:01</date>
+<message id="6">
+<date>2011-09-17 06:23:21</date>
 <senderId>1</senderId>
 <sender>Operador 1</sender>
-<content>fsfsdfsd</content>
-</message>
-
-<message id="12">
-<date>2011-09-17 04:54:36</date>
-<senderId>1</senderId>
-<sender>Operador 1</sender>
-<content>dasdasdsd</content>
-</message>
-
-<message id="13">
-<date>2011-09-17 04:56:52</date>
-<senderId>1</senderId>
-<sender>Operador 1</sender>
-<content>asdsdasd</content>
-</message>
-
-<message id="14">
-<date>2011-09-17 05:00:54</date>
-<senderId>1</senderId>
-<sender>Operador 1</sender>
-<content>fernando</content>
+<content>tranquilo y tu</content>
 </message>
 </chat>

@@ -9,13 +9,17 @@
         ?>
     </head>
     <body>
-        <h1>Chat</h1>
-        <div id="areachat">
-          
+        <div id="wrap">
+            <div id="header">
+                <?=$header?>
+            </div>
+            <div id="content">
+            <h2>Chat</h2>
+            <div id="areachat"></div>
+            <br/>
+            <textarea name="inputChat" id="inputChat" rows="4"" cols="50"></textarea>
+            <input type="button" name="submitChat" id="submitChat" value="Enviar mensaje" />
+            </div>
         </div>
-        <br/>
-        <textarea name="inputChat" id="inputChat" rows="4"" cols="50"></textarea>
-        <input type="button" name="submitChat" id="submitChat" value="Enviar mensaje" />
-        
     </body>
 </html>

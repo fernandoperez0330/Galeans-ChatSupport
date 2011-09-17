@@ -7,7 +7,7 @@
 //variable que identificara la session a utilizar
 var session = 0;
 //variable que identifica el directorio de las sessiones
-dirChatSessions = "chatSessions/";
+dirChatSessions = "chatsessions/";
 
 
 function refreshChat(){
@@ -47,20 +47,22 @@ $(document).ready(function(){
     /*
      *
      */
+    
+    var url = "ajax.genchat.php";
     $("#submitChat").click(function(){
-	   if ($("#inputChat").val() == "") return false;
+       if ($("#inputChat").val() == "") return false;
        var session = 1;
        var sender = "Operador 1";
        var senderId = 1;
        var content = $("#inputChat").val();
        $.ajax({
             type: "POST",
-            url: "ajax.genChat.php",
+            url: url,
             data: "session=" + session + "&sender=" + sender + "&senderId=" + senderId + "&content=" + content,
-            beforeSend:function(){},
             success: function(data) {
                 refreshChat();
-            }
+            },
+            cache:false
         });
        $("#inputChat").val(""); 
     }); 

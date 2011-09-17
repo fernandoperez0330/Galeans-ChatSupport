@@ -1,17 +1,18 @@
 <?php
+ini_set("display_errors","on");
 /*
  * description  :   
  * created      : 16-09-2011
  * created by   : Fernando Perez
  * version      : 1.0
  */
-if (!(isset($_POST['session']) && isset($_POST['senderId']) && isset($_POST['sender']) && isset($_POST['content']))) return json_encode(array("error"=>"Faltan parametros para procesar"));
+if (!(isset($_POST['session']) && isset($_POST['senderId']) && isset($_POST['sender']) && isset($_POST['content']))) echo json_encode(array("error"=>"Faltan parametros para procesar"));
 $session  = $_POST['session'];
 $senderId  = $_POST['senderId'];
 $sender = $_POST['sender'];
 $content = $_POST['content'];
 
-$filename = "chatSessions/$session.xml";
+$filename = "chatsessions/$session.xml";
 
 $xmlContent = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 $xmlContent.= "<chat>\n";
@@ -39,7 +40,7 @@ $xmlContent.= "<content>$content</content>\n";
 $xmlContent.= "</message>\n";
 
 $xmlContent.= "</chat>";
-$resFile = fopen($filename,'r+');
+$resFile = fopen($filename,'w+');
 fwrite($resFile,$xmlContent);
 fclose($resFile);
 ?>

@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title><?=$title?></title>
+        <?php
+        //para dar salida de los tags de los javascripts pro defecto
+        include(Config::$directories['views'] . "jscripts.html");
+        //para dar salida de los tags de los css por defecto
+        include(Config::$directories['views'] . "css.html");
+        ?>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="header">
+                <?=$header?>
+            </div>
+            <div id="content">
+                <h2>Iniciar chat</h2>
+                <p>ingrese los datos para iniciar chat</p>
+                <form method="post" action="chat.php" name="frmIniciaChat" id="frmIniciaChat">
+                <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <label for="" align="right">Nombre.:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="name" id="name" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="" align="right">Correo Electronico.:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="email" id="name" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="" align="right">Telefono (opcional).:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="telefono" id="name" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="" align="right">Direccion (opcional).:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="direccion" id="name" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="" align="right">Operadores.:</label>
+                        </td>
+                        <td>
+                            <select name="operadores" id="operadores">
+                                <option value="0">Seleccione</option>
+                                <option value="1">Operador 1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="right">
+                            <input type="submit" name="iniciar" value="Iniciar Chat" />
+                        </td>
+                    </tr>
+                </table>    
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

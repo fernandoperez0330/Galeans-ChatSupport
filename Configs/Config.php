@@ -25,7 +25,6 @@ class Config {
     static $jsutils = "utils.js";
     
     static $cssmain  = "main.css";
-    
     static $title = "Galeans Chat Support";
 }
 

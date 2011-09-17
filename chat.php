@@ -21,5 +21,8 @@ $operator = 1;
 //session_id's clients
 $client = 1;
 
-include(Config::$directories['views'] . "chat.html");
+if (isset($_POST['iniciar']))
+    include(Config::$directories['views'] . "chat.html");    
+else
+    include(Config::$directories['views'] . "inichat.html");
 ?>
