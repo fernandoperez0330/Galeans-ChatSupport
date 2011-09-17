@@ -24,9 +24,9 @@ class Config {
     static $jquery = "jq.js";
     static $jsmain = "main.js";
     
+    static $cssmain  = "main.css";
     
     static $title = "Galeans Chat Support";
-    static $header ="";
 }
 
 ?>
