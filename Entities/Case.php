@@ -2,16 +2,47 @@
 
 	public class Case{
 	
-		public int $caseId;
-		public string $description;
-		public string $notes;
-		public string $solution;
-		public Section $section;
+		private $caseId;
+		private $description;
+		private $notes;
+		private $solution;
+		private $section;
 		
-		public Case(string $description, string $notes,
-		 string $solution, Section $section ){
-			$this->$description=$description;
+		public Case($description, $notes,
+		 			$solution, $section ){
+			$this->description = $description;
+			$this->notes = $notes;
+			$this->solution = $solution;
+			$this->section = $section;
 		}
+		
+		public function setCaseId($caseId){
+			$this->caseId = $caseId;
+		}
+		public function getCaseId(){
+			return $this->caseId;
+		}
+		
+		public function setNotes($notes){
+			$this->notes = $notes;
+		}
+		public function getNotes(){
+			return $this->notes;
+		}
+		
+		public function setSolution($solution){
+			return $this ->solution=$solution;
+		}
+		
+		public function getSolution(){
+			return $this->solution;
+		}
+		
+		public function setSection($section){
+			$this->section = $section;
+		}
+		
+		
 	
 	}
 
